@@ -1,0 +1,7 @@
+os: osx
+osx_image: xcode11.5
+language: objective-c
+
+before_script:
+  - security find-identity -vp codesigning
+script: true
