@@ -4,4 +4,8 @@ language: objective-c
 
 before_script:
   - security find-identity -vp codesigning
+  - wget https://www.apple.com/certificateauthority/AppleWWDRCAG3.cer
+  - sudo security import AppleWWDRCAG3.cer -k ~/Library/Keychains/login.keychain
+  - sudo security import AppleWWDRCAG3.cer -k /Library/Keychains/System.keychain
+  - security find-identity -vp codesigning
 script: true
